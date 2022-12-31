@@ -1,0 +1,20 @@
+nelmio_api_doc:
+    documentation:
+        servers:
+            - url: http://127.0.0.1:8000/api/doc.json
+              description: API over HTTP
+        info:
+            title: REST API test task
+            description: REST API test task PHP Developer!
+            version: 1.0.0
+        components:
+            securitySchemes:
+                Bearer:
+                    type: http
+                    scheme: bearer
+                    bearerFormat: JWT
+        security:
+            - Bearer: [ ]
+    areas: # to filter documented areas
+        path_patterns:
+            - ^/api(?!/doc$) # Accepts routes under /api except /api/doc
