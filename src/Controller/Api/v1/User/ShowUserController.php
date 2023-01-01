@@ -12,7 +12,6 @@ use OpenApi\Annotations as OA;
 #[IsGranted('IS_AUTHENTICATED_FULLY')]
 class ShowUserController extends AbstractController
 {
-    //Password887
     #[Route('/users', name: 'show_user', methods: 'GET')]
     /**
      * @OA\Get(

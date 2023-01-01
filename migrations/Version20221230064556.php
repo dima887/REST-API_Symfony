@@ -21,6 +21,7 @@ final class Version20221230064556 extends AbstractMigration
     {
         // this up() migration is auto-generated, please modify it to your needs
         $this->addSql('ALTER TABLE user ADD first_name VARCHAR(255) DEFAULT NULL, ADD last_name VARCHAR(255) DEFAULT NULL, ADD phone VARCHAR(255) DEFAULT NULL');
+        $this->addSql('INSERT INTO user (email, username, roles, password) VALUES ( "admin@mail.ru", "admin@mail.ru", ?, "$2y$13$bYdVf916TfA8pQL0voayFunn0HIMs1iKr5JvdR1xXXWZ24jtd7y0i");', [json_encode(['ROLE_ADMIN'])]);
     }
 
     public function down(Schema $schema): void
